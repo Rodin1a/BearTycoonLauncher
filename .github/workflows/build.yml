@@ -31,56 +31,8 @@ jobs:
         run: npm ci
         shell: bash
 
-      - name: Get Version from package.json
-        id: get_version
-        run: echo "::set-output name=VERSION::$(node -p -e \"require('./package.json').version\")"
-
       - name: Build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run dist
         shell: bash
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v${{ steps.get_version.outputs.VERSION }}
-          release_name: Release v${{ steps.get_version.outputs.VERSION }}
-          draft: false
-          prerelease: false
-
-      - name: Upload Windows Release Asset
-        if: matrix.os == 'windows-latest'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/BTY-Launcher-setup-${{ steps.get_version.outputs.VERSION }}.exe
-          asset_name: BTY-Launcher-setup-${{ steps.get_version.outputs.VERSION }}.exe
-          asset_content_type: application/octet-stream
-
-      - name: Upload macOS Release Asset
-        if: matrix.os == 'macos-latest'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/BTY-Launcher-setup-${{ steps.get_version.outputs.VERSION }}.dmg
-          asset_name: BTY-Launcher-setup-${{ steps.get_version.outputs.VERSION }}.dmg
-          asset_content_type: application/octet-stream
-
-      - name: Upload Linux Release Asset
-        if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/BTY-Launcher-setup-${{ steps.get_version.outputs.VERSION }}.AppImage
-          asset_name: BTY-Launcher-setup-${{ steps.get_version.outputs.VERSION }}.AppImage
-          asset_content_type: application/octet-stream
