@@ -6,7 +6,7 @@
 
 <p align="center"><a href="https://github.com/Rodin1a/BearTycoonLauncher/actions"><img src="https://img.shields.io/github/actions/workflow/status/Rodin1a/BearTycoonLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions"></a> <a href="https://github.com/Rodin1a/BearTycoonLauncherreleases"><img src="https://img.shields.io/github/downloads/Rodin1a/BearTycoonLauncher/total.svg?style=for-the-badge" alt="downloads"></a>
 
-[<p align="center"><img src="https://img.shields.io/endpoint?url=https://minecraft-server-status-badge.vercel.app/api/server/ssh.idor.top?port=25565&logo=curseforge&logoColor=ffffff&label=BEAR TYCOON&labelColor=F16436&color=28231d&style=for-the-badge" title="BEARTY SERVER"/>](https://mysticred.space) [<img src="https://img.shields.io/discord/1317373074215276616?style=for-the-badge&logo=discord&logoColor=ffffff&label=Discord&labelColor=6173f4&color=28231d" alt="discord">](https://discord.gg/qbJUMJW6P4)
+[<p align="center"><img src="https://img.shields.io/endpoint?url=https://minecraft-server-status-badge.vercel.app/api/server/ssh.idor.top?port=25565&logo=curseforge&logoColor=ffffff&label=BEAR TYCOON&labelColor=F16436&color=28231d&style=for-the-badge" title="BEARTY SERVER"/>](https://candle-bougon-131.notion.site/1-15b20a105939808eab45c464129a7758) [<img src="https://img.shields.io/discord/1317373074215276616?style=for-the-badge&logo=discord&logoColor=ffffff&label=Discord&labelColor=6173f4&color=28231d" alt="discord">](https://discord.gg/qbJUMJW6P4)
 
 <p align="center">Java, Forge, 모드 설치 걱정 없이 서버에 접속하세요. BTY 런처 하나로 준비 끝!</p>
 
@@ -201,7 +201,7 @@ Microsoft 인증 설정 방법은 [여기](https://github.com/dscalzi/HeliosLaun
 
 ---
 
-## BearTycoon Season 2
+## 베어 타이쿤 Season 2
 
 #### 재미있게 즐겨주세요!
 
@@ -211,7 +211,7 @@ Microsoft 인증 설정 방법은 [여기](https://github.com/dscalzi/HeliosLaun
 * 💰 후원금은 모두 서버 호스팅 비용으로 사용되며 후원 내역이 투명하게 공개
 * 📰 마인크래프트 모드 관련 뉴스가 실시간으로 업데이트되고, AI 번역 및 알림 설정 기능 제공
 
-아래 디스코드에서 BTY와 함께하세요.
+아래 디스코드에서 베어 타이쿤과 함께하세요.
 
 [![discord](https://discordapp.com/api/guilds/1317373074215276616/embed.png?style=banner3)][discord]
 

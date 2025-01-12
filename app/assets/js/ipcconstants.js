@@ -3,6 +3,7 @@
 // SEE https://github.com/dscalzi/HeliosLauncher/blob/master/docs/MicrosoftAuth.md
 exports.AZURE_CLIENT_ID = '8f387cc5-3138-4699-89a9-f97948e3927e'
 // SEE NOTE ABOVE.
+// c1d7dc21-c5bd-49e7-b308-dd2eaad640c2
 
 
 // Opcodes
