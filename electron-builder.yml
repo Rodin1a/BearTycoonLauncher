@@ -13,6 +13,11 @@ files:
 extraResources:
   - 'libraries'
 
+publish:
+  provider: github
+  owner: Rodin1a
+  repo: BearTycoonLauncher
+  
 # Windows Configuration
 win: 
   target: 
