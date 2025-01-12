@@ -90,7 +90,7 @@ jobs:
           asset_content_type: application/octet-stream
 
       - name: Upload macOS Asset-x64
-        if: matrix.os == 'macos-latest'
+        if: matrix.os == 'macos-latest' && matrix.arch == 'x64'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -100,8 +100,8 @@ jobs:
           asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-x64.dmg
           asset_content_type: application/octet-stream
 
-      - name: Upload macOS Asset-arm
-        if: matrix.os == 'macos-latest'
+      - name: Upload macOS Asset-arm64
+        if: matrix.os == 'macos-latest' && matrix.arch == 'arm64'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
