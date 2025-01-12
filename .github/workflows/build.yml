@@ -85,7 +85,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
-          asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}.dmg
+          asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-x64.dmg
           asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-mac.dmg
           asset_content_type: application/octet-stream
 
