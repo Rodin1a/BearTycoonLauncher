@@ -4,9 +4,9 @@
 
 <h3 align="center"><a href="https://github.com/dscalzi/HeliosLauncher">Forked from Helios Launcher</a></h3>
 
-<p align="center"><a href="https://github.com/peunsu/MRSLauncher/actions"><img src="https://img.shields.io/github/actions/workflow/status/peunsu/MRSLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions"></a> <a href="https://github.com/peunsu/MRSLauncher/releases"><img src="https://img.shields.io/github/downloads/peunsu/MRSLauncher/total.svg?style=for-the-badge" alt="downloads"></a>
+<p align="center"><a href="https://github.com/Rodin1a/BearTycoonLauncheractions"><img src="https://img.shields.io/github/actions/workflow/status/peunsu/MRSLauncher/build.yml?branch=master&style=for-the-badge" alt="gh actions"></a> <a href="https://github.com/Rodin1a/BearTycoonLauncherreleases"><img src="https://img.shields.io/github/downloads/peunsu/MRSLauncher/total.svg?style=for-the-badge" alt="downloads"></a>
 
-[<p align="center"><img src="https://img.shields.io/endpoint?url=https://minecraft-server-status-badge.vercel.app/api/server/mysticred.space?port=25565&logo=curseforge&logoColor=ffffff&label=MRS Server&labelColor=F16436&color=28231d&style=for-the-badge" alt="homepage">](https://mysticred.space) [<img src="https://img.shields.io/discord/330997213255827457?style=for-the-badge&logo=discord&logoColor=ffffff&label=Discord&labelColor=6173f4&color=28231d" alt="discord">](https://discord.gg/Z8j6ahF4MJ)
+[<p align="center"><img src="https://img.shields.io/endpoint?url=https://minecraft-server-status-badge.vercel.app/api/server/mysticred.space?port=25565&logo=curseforge&logoColor=ffffff&label=MRS Server&labelColor=F16436&color=28231d&style=for-the-badge" alt="homepage">](https://mysticred.space) [<img src="https://img.shields.io/discord/330997213255827457?style=for-the-badge&logo=discord&logoColor=ffffff&label=Discord&labelColor=6173f4&color=28231d" alt="discord">](https://discord.gg/qbJUMJW6P4)
 
 <p align="center">Java, Forge, 모드 설치 걱정 없이 서버에 접속하세요. MRS 런처 하나로 준비 끝!</p>
 
@@ -41,26 +41,26 @@
 
 ## 다운로드
 
-[GitHub Releases](https://github.com/peunsu/MRSLauncher/releases)에서 다운로드할 수 있어요.
+[GitHub Releases](https://github.com/Rodin1a/BearTycoonLauncher/releases)에서 다운로드할 수 있어요.
 
 #### 최신 릴리즈 버전
 
-[![](https://img.shields.io/github/v/release/peunsu/MRSLauncher?style=flat-square)](https://github.com/peunsu/MRSLauncher/releases/latest)
+[![](https://img.shields.io/github/v/release/peunsu/MRSLauncher?style=flat-square)](https://github.com/Rodin1a/BearTycoonLauncher/releases/latest)
 
 #### 최신 프리릴리즈 버전
 
-[![](https://img.shields.io/github/v/release/peunsu/MRSLauncher?include_prereleases&style=flat-square&label=pre-release)](https://github.com/peunsu/MRSLauncher/releases)
+[![](https://img.shields.io/github/v/release/peunsu/MRSLauncher?include_prereleases&style=flat-square&label=pre-release)](https://github.com/Rodin1a/BearTycoonLauncher/releases)
 
 **지원하는 플랫폼**
 
-[Releases](https://github.com/peunsu/MRSLauncher/releases) 탭에서 시스템 OS에 맞는 설치 파일을 선택해서 다운로드하세요.
+[Releases](https://github.com/Rodin1a/BearTycoonLauncher/releases) 탭에서 시스템 OS에 맞는 설치 파일을 선택해서 다운로드하세요.
 
 | 플랫폼 | 파일 |
 | -------- | ---- |
-| Windows x64 | `MRS-Launcher-setup-VERSION.exe` |
-| macOS x64[^1] | `MRS-Launcher-setup-VERSION-x64.dmg` |
-| macOS arm64[^1] | `MRS-Launcher-setup-VERSION-arm64.dmg` |
-| Linux x64 | `MRS-Launcher-setup-VERSION.AppImage` |
+| Windows x64 | `BTY-Launcher-setup-VERSION.exe` |
+| macOS x64[^1] | `BTY-Launcher-setup-VERSION-x64.dmg` |
+| macOS arm64[^1] | `BTY-Launcher-setup-VERSION-arm64.dmg` |
+| Linux x64 | `BTY-Launcher-setup-VERSION.AppImage` |
 [^1]: macOS 설치 파일은 서명되지 않아서 보안 경고가 뜰 수 있으며 정상 작동을 보장하지 않아요.
 
 ## 콘솔
@@ -95,7 +95,7 @@ ctrl + shift + i
 **레포지토리 클론 및 의존 패키지 설치**
 
 ```console
-> git clone https://github.com/peunsu/MRSLauncher.git
+> git clone https://github.com/Rodin1a/BearTycoonLauncher.git
 > cd MRSLauncher
 > npm install
 ```
@@ -221,6 +221,6 @@ Microsoft 인증 설정 방법은 [여기](https://github.com/dscalzi/HeliosLaun
 [rendererprocess]: https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes 'Renderer Process'
 [chromedebugger]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'Debugger for Chrome'
 [discord]: https://discord.gg/zNWUXdt 'Discord'
-[wiki]: https://github.com/peunsu/MRSLauncher/wiki 'wiki'
+[wiki]: https://github.com/Rodin1a/BearTycoonLauncherwiki 'wiki'
 [nebula]: https://github.com/dscalzi/Nebula 'dscalzi/Nebula'
 [v2branch]: https://github.com/dscalzi/HeliosLauncher/tree/ts-refactor 'v2 branch'

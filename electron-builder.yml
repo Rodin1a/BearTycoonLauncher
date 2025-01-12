@@ -1,8 +1,8 @@
-appId: 'mrslauncher'
-productName: 'MRS Launcher'
-artifactName: 'MRS-Launcher-setup-${version}.${ext}'
+appId: 'btylauncher'
+productName: 'BTY Launcher'
+artifactName: 'BTY-Launcher-setup-${version}.${ext}'
 
-copyright: 'Copyright © 2018-2024 Daniel Scalzi, Copyright © 2024 peunsu'
+copyright: 'Copyright © 2025 Rodin1a'
 
 asar: true
 compression: 'maximum'
@@ -33,14 +33,14 @@ mac:
       arch:
         - 'x64'
         - 'arm64'
-  artifactName: 'MRS-Launcher-setup-${version}-${arch}.${ext}'
+  artifactName: 'BTY-Launcher-setup-${version}-${arch}.${ext}'
   category: 'public.app-category.games'
 
 # Linux Configuration
 linux: 
   target: 'AppImage'
-  maintainer: 'Daniel Scalzi, peunsu'
-  vendor: 'Daniel Scalzi, peunsu'
+  maintainer: 'Rodin1a'
+  vendor: 'Rodin1a'
   synopsis: 'Modded Minecraft Launcher'
   description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.'
   category: 'Game'
