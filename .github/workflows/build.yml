@@ -3,12 +3,39 @@ name: Build
 on: push
 
 jobs:
-  release:
+  create_release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      version: ${{ steps.get_version.outputs.version }}
+    
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Get Version
+        id: get_version
+        run: echo "::set-output name=version::$(node -p -e \"require('./package.json').version\")"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.get_version.outputs.version }}
+          release_name: BTY Launcher v${{ steps.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+
+  build_and_upload:
+    needs: create_release
     runs-on: ${{ matrix.os }}
-
-    permissions:
-      contents: write
-
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
@@ -16,7 +43,7 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
-
+      
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
@@ -31,28 +58,11 @@ jobs:
         run: npm ci
         shell: bash
 
-      - name: Get Version
-        id: package_version
-        run: |
-          echo "VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
-        shell: bash
-
       - name: Build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run dist
         shell: bash
-
-      # - name: Create Release
-      #   id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: v${{ env.VERSION }}
-      #     release_name: Release v${{ env.VERSION }}
-      #     draft: false
-      #     prerelease: false
 
       - name: Upload Windows Asset
         if: matrix.os == 'windows-latest'
@@ -60,9 +70,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/BTY-Launcher-setup-${{ env.VERSION }}.exe
-          asset_name: BTY-Launcher-setup-${{ env.VERSION }}.exe
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}.exe
+          asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}.exe
           asset_content_type: application/octet-stream
 
       - name: Upload macOS Asset
@@ -71,9 +81,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/BTY-Launcher-setup-${{ env.VERSION }}.dmg
-          asset_name: BTY-Launcher-setup-${{ env.VERSION }}-mac.dmg
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}.dmg
+          asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-mac.dmg
           asset_content_type: application/octet-stream
 
       - name: Upload Linux Asset
@@ -82,7 +92,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/BTY-Launcher-setup-${{ env.VERSION }}.AppImage
-          asset_name: BTY-Launcher-setup-${{ env.VERSION }}-linux.AppImage
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}.AppImage
+          asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-linux.AppImage
           asset_content_type: application/octet-stream
