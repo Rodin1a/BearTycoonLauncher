@@ -78,7 +78,7 @@ jobs:
           asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}.exe
           asset_content_type: application/octet-stream
 
-      - name: Upload macOS Asset
+      - name: Upload macOS Asset-x64
         if: matrix.os == 'macos-latest'
         uses: actions/upload-release-asset@v1
         env:
@@ -86,6 +86,17 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-x64.dmg
+          asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-mac.dmg
+          asset_content_type: application/octet-stream
+
+      - name: Upload macOS Asset-arm
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_path: ./dist/BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-arm64.dmg
           asset_name: BTY-Launcher-setup-${{ needs.create_release.outputs.version }}-mac.dmg
           asset_content_type: application/octet-stream
 
