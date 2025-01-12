@@ -29,10 +29,9 @@ jobs:
         id: check_release
         run: |
           if gh release view v${{ steps.get_version.outputs.version }}; then
-            echo "Release already exists"
-            exit 0
+            echo "RELEASE_EXISTS=true" >> $GITHUB_ENV
           else
-            echo "Release does not exist"
+            echo "RELEASE_EXISTS=false" >> $GITHUB_ENV
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,7 +39,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        if: failure()
+        if: env.RELEASE_EXISTS == 'false'
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
