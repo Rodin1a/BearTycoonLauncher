@@ -48,12 +48,35 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
+      - name: Upload Windows Release Asset
+        if: matrix.os == 'windows-latest'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/win-unpacked/BTY\ Launcher.exe
-          asset_name: BTY_Launcher.exe
+          asset_path: dist/BTY-Launcher-setup-${{ github.sha }}.exe
+          asset_name: BTY-Launcher-setup-${{ github.sha }}.exe
+          asset_content_type: application/octet-stream
+
+      - name: Upload macOS Release Asset
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/BTY-Launcher-setup-${{ github.sha }}.dmg
+          asset_name: BTY-Launcher-setup-${{ github.sha }}.dmg
+          asset_content_type: application/octet-stream
+
+      - name: Upload Linux Release Asset
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/BTY-Launcher-setup-${{ github.sha }}.AppImage
+          asset_name: BTY-Launcher-setup-${{ github.sha }}.AppImage
           asset_content_type: application/octet-stream
