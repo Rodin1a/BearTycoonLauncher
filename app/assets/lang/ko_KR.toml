@@ -8,15 +8,15 @@ serverStatusPlaceholder = "오프라인"
 mojangStatus = "MOJANG 상태"
 mojangStatusTooltipTitle = "서비스"
 mojangStatusNETitle = "Non&nbsp;Essential"
-newsButton = "NEWS"
+newsButton = "UPDATE"
 launchButton = "PLAY"
 launchButtonPlaceholder = "&#8226; 선택된 서버 없음"
 launchDetails = "잠시만 기다려주세요.."
 newsNavigationStatus = "{currentPage} / {totalPages}"
-newsErrorLoadSpan = "뉴스를 확인하는 중.."
-newsErrorFailedSpan = "뉴스 불러오기 실패"
+newsErrorLoadSpan = "업데이트 내역을 확인하는 중.."
+newsErrorFailedSpan = "업데이트 내역 불러오기 실패"
 newsErrorRetryButton = "다시 시도"
-newsErrorNoneSpan = "뉴스 없음"
+newsErrorNoneSpan = "업데이트 내역 없음"
 
 [ejs.login]
 loginCancelText = "취소"
@@ -208,7 +208,7 @@ doneEnjoyServer = "완료. 즐거운 시간 되세요!"
 checkConsoleForDetails = "콘솔 (CTRL + Shift + i) 에서 자세한 내용을 확인하세요."
 
 [js.landing.news]
-checking = "뉴스 확인 중"
+checking = "업데이트 내역 확인 중"
 
 [js.landing.discord]
 loading = "게임 로딩 중.."
